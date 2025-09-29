@@ -7,12 +7,12 @@ st.title("Sentiment Analysis Prediction App")
 
 # Load the trained model and vectorizer
 try:
-    with open('sentimail_logreg_model.pkl', 'rb') as file:
+    with open('sentiment_logreg_model.pkl', 'rb') as file:
         data = pickle.load(file)
         model = data['model']
         vectorizer = data['vectorizer']
 except FileNotFoundError:
-    st.error("Model file 'sentimail_logreg_model.pkl' not found. Please ensure it is in the same directory.")
+    st.error("Model file 'sentiment_logreg_model.pkl' not found. Please ensure it is in the same directory.")
     st.stop()
 
 # Text input for user
@@ -37,4 +37,5 @@ st.write("""
 ### Instructions
 1. Enter the text you want to analyze in the box above.
 2. Click the 'Predict Sentiment' button to see the predicted sentiment.
+
 """)
